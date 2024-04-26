@@ -6,6 +6,9 @@ from pythainlp import Tokenizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 import joblib
 
+def split_fn(x):
+    return x.split(' ')
+    
 class SentimentAnalyzer:
     def __init__(self):
         # Load data and models

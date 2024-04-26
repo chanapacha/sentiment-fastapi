@@ -1,12 +1,13 @@
 from fastapi import FastAPI, HTTPException, File, UploadFile
-from fastapi.responses import FileResponse  # Import FileResponse
+from fastapi.responses import FileResponse
 from pydantic import BaseModel
-from SentimentAnalyzer import SentimentAnalyzer
+from SentimentAnalyzer import *
 import pandas as pd
 import tempfile
 import os
 
 app = FastAPI()
+analyzer = SentimentAnalyzer()
 
 class SentimentInput(BaseModel):
     text: str
@@ -16,7 +17,9 @@ class SentimentResult(BaseModel):
     confidence: float
     trigger: str
 
-analyzer = SentimentAnalyzer()
+@app.get("/")
+async def get_html():
+    return FileResponse("index.html")
 
 @app.post("/predict_sentiment_text/")
 async def predict_sentiment_text(sentiment_input: SentimentInput):
