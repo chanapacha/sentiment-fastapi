@@ -56,3 +56,6 @@ async def predict_sentiment_excel(file: UploadFile = File(...)):
     os.remove(tmp_path)
 
     return FileResponse(output_filename, media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", filename=output_filename)
+
+if __name__ == '__main__':
+    app.run()
