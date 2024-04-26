@@ -1,7 +1,7 @@
 # Sentiment Analysis Web Application
 Created by  Chanapa Chareesan
 
-![Sentiment Analysis Web App](images/sentiment-fastapi/web.png)
+![Sentiment Analysis Web App](web.png)
 
 ## Overview
 This project is a web application built with FastAPI that provides sentiment analysis functionality. It allows users to input text or upload an Excel file containing text data for sentiment analysis. The application analyzes the sentiment of the provided text data and returns the results to the user.
