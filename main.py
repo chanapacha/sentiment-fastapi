@@ -1,13 +1,16 @@
 from fastapi import FastAPI, HTTPException, File, UploadFile
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
-from SentimentAnalyzer import *
+from SentimentAnalyzer import SentimentAnalyzer
 import pandas as pd
 import tempfile
 import os
+from utils import split_fn
 
 app = FastAPI()
 analyzer = SentimentAnalyzer()
+
+
 
 class SentimentInput(BaseModel):
     text: str
@@ -56,3 +59,7 @@ async def predict_sentiment_excel(file: UploadFile = File(...)):
     os.remove(tmp_path)
 
     return FileResponse(output_filename, media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", filename=output_filename)
+
+# if __name__ == '__main__':
+    # import uvicorn
+    # uvicorn.run(app, host="0.0.0.0", port=8000)

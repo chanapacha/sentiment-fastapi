@@ -5,9 +5,8 @@ from pythainlp.corpus.common import thai_words
 from pythainlp import Tokenizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 import joblib
+from utils import split_fn
 
-def split_fn(x):
-    return x.split(' ')
     
 class SentimentAnalyzer:
     def __init__(self):

@@ -3,6 +3,8 @@
 import streamlit as st
 import pandas as pd
 from SentimentAnalyzer import *
+from utils import split_fn
+
 
 # Initialize SentimentAnalyzer
 analyzer = SentimentAnalyzer()
