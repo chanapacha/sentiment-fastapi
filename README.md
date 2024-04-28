@@ -14,8 +14,8 @@ This project is a web application built with FastAPI that provides sentiment ana
 - Analyze sentiment of text input.
 - Analyze sentiment of text data uploaded via Excel file.
 - User-friendly interface for inputting text and viewing analysis results.
-1. Usage
-  - Text Input:
+## Usage
+1. Text Input:
   - Enter text in the input box provided.
   - Click the "Analyze" button to perform sentiment analysis.
   - View the sentiment prediction, confidence score, and trigger status.
